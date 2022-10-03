@@ -4,6 +4,7 @@ public class OrderRequest {
     private Long isbn;
     private Long userId;
     private Long count;
+    private Long couponId;
 
     private OrderRequest() {/*no-op*/}
 
@@ -17,5 +18,9 @@ public class OrderRequest {
 
     public Long getCount() {
         return count;
+    }
+
+    public Long getCouponId() {
+        return couponId;
     }
 }

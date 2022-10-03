@@ -9,6 +9,7 @@ public class BookService {
         return null;
     }
 
-    public void order(OrderRequest orderRequest) {
+    public OrderResponse order(OrderRequest orderRequest) {
+        return null;
     }
 }

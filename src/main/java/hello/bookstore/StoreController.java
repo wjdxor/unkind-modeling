@@ -19,9 +19,9 @@ public class StoreController {
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Void> orderBook(@RequestBody OrderRequest orderRequest) {
-        bookService.order(orderRequest);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<OrderResponse> orderBook(@RequestBody OrderRequest orderRequest) {
+        OrderResponse orderResponse = bookService.order(orderRequest);
+        return ResponseEntity.ok(orderResponse);
     }
 
     @GetMapping(
