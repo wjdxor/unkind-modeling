@@ -6,7 +6,7 @@ public class OrderRequest {
     private Long isbn;
     private Long userId;
     private Long count;
-    private List<Long> couponId;
+    private List<Discount> couponId;
 
     private OrderRequest() {/*no-op*/}
 
@@ -22,7 +22,7 @@ public class OrderRequest {
         return count;
     }
 
-    public List<Long> getCouponId() {
+    public List<Discount> getCouponId() {
         return couponId;
     }
 }
