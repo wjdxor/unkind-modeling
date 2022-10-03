@@ -1,10 +1,12 @@
 package hello.bookstore;
 
+import java.util.List;
+
 public class OrderRequest {
     private Long isbn;
     private Long userId;
     private Long count;
-    private Long couponId;
+    private List<Long> couponId;
 
     private OrderRequest() {/*no-op*/}
 
@@ -20,7 +22,7 @@ public class OrderRequest {
         return count;
     }
 
-    public Long getCouponId() {
+    public List<Long> getCouponId() {
         return couponId;
     }
 }
