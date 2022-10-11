@@ -4,9 +4,25 @@
 ## step 1
 
 1. 현재 코드의 문제점을 파악해주세요.
+   1. DTO의 getter메소드를 통해 노출될 수 있다. 
 2. 코드를 보고 모델링을 구현해주세요.- 객체들의 상태와 행위를 정의해주세요.
+   1. Book
+      - 상태
+         - isbn(Long), title(String), content(String) LocalDateTime(String) 
+      - 행위
+        - 책을 조회할 수 있다.
+   2. Order
+      - 상태  
+        - isbn(Long), userId(Long), count(Long) couponId(List<>)
+      - 행위
+        - 책을 주문할 수 있다.
+
 3. 객체 다이어그램을 작성해주세요.
+    
 4. 사용자 시나리오를 정의해주세요.
+    - 사용자가 여러 책을 조회하고 선택할 수 있다.
+    - 사용자가 하나의 책을 조회하고 주문할 수 있다.
+    - 책을 주문할때 할인정책에 따라 할인 받을 수 있다.
 
 (Optional) 할인은 어떻게 구현할까요?
 
