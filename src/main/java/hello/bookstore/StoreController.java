@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("store/book")
 public class StoreController {
+    private final BookService bookService;
 
-    private BookService bookService;
+    public StoreController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     @PostMapping(
         consumes = MediaType.APPLICATION_JSON_VALUE,

@@ -8,7 +8,14 @@ public class OrderRequest {
     private Long count;
     private List<Discount> couponId;
 
-    private OrderRequest() {/*no-op*/}
+    public OrderRequest() {/*no-op*/}
+
+    public OrderRequest(Long isbn, Long userId, Long count, List<Discount> couponId) {
+        this.isbn = isbn;
+        this.userId = userId;
+        this.count = count;
+        this.couponId = couponId;
+    }
 
     public Long getIsbn() {
         return isbn;
@@ -24,5 +31,15 @@ public class OrderRequest {
 
     public List<Discount> getCouponId() {
         return couponId;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderRequest{" +
+            "isbn=" + isbn +
+            ", userId=" + userId +
+            ", count=" + count +
+            ", couponId=" + couponId +
+            '}';
     }
 }
