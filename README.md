@@ -15,6 +15,11 @@
 ## step 2
 
 1. 모델링과 사용자 시나리오를 기반으로 e2e 테스트를 먼저 구현해주세요!
+   - "store/book" 
+     - [ ] POST
+     - [ ] GET 
+   - "store/book/{isbn}"
+     - [ ] GET
 2. 모델링을 기반으로 API 문서를 작성해주세요!
 
 ## step 3
