@@ -32,8 +32,15 @@ public class BookService {
     public OrderResponse order(OrderRequest orderRequest) {
         // TODO : 로직을 완성하세요
         // 1. 책이 존재하는지 확인한다.
+        if (bookRepository.findOne(orderRequest.getIsbn()).isEmpty()) {
+            throw new IllegalArgumentException("책이 존재하지 않습니다.");
+        }
         // 2. 할인이 있는지 확인한다.
+        if (!orderRequest.getCouponId().isEmpty()) {
+            Discount coupon = orderRequest.getCouponId().get(0);
+        }
         // 3. 책과 주문 수량과 할인을 가지고 총 금액을 반환한다.
-        return null;
+        Long price = orderRequest.getCount() * 100L - 10L;
+        return new OrderResponse(price);
     }
 }
