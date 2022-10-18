@@ -31,7 +31,7 @@ public class FakeBookServiceTest {
     @DisplayName("책을 조회한다.")
     void findBookTest() {
         //given
-        Book book = new Book(123L,"책이름", "책내용", LocalDateTime.now());
+        Book book = new Book(123L, "책이름", "책내용", LocalDateTime.now());
         bookRepository.save(book);
         //then
         assertThat(bookService.findBook(123L).getTitle()).isEqualTo("책이름");
@@ -40,9 +40,9 @@ public class FakeBookServiceTest {
     @Test
     void findBooksTest() {
         //given
-        bookRepository.save(new Book(1L,"책이름", "책내용", LocalDateTime.now()));
-        bookRepository.save(new Book(2L,"책이름", "책내용", LocalDateTime.now()));
-        bookRepository.save(new Book(3L,"책이름", "책내용", LocalDateTime.now()));
+        bookRepository.save(new Book(1L, "책이름", "책내용", LocalDateTime.now()));
+        bookRepository.save(new Book(2L, "책이름", "책내용", LocalDateTime.now()));
+        bookRepository.save(new Book(3L, "책이름", "책내용", LocalDateTime.now()));
         //then
         assertThat(bookService.findBooks().getBookResponses().size()).isEqualTo(3);
     }
@@ -50,8 +50,8 @@ public class FakeBookServiceTest {
     @Test
     void orderBookTest() {
         //given
-        bookRepository.save(new Book(1L,"책이름", "책내용", LocalDateTime.now()));
-        OrderRequest request = new OrderRequest(1L,1L,1L, List.of(Discount.TEN_PERCENT));
+        bookRepository.save(new Book(1L, "책이름", "책내용", LocalDateTime.now()));
+        OrderRequest request = new OrderRequest(1L, 1L, 1L, List.of(Discount.TEN_PERCENT));
         //when
         OrderResponse response = bookService.order(request);
         //then

@@ -1,28 +1,26 @@
 package hello.bookstore.mock;
 
-import hello.bookstore.Book;
-import hello.bookstore.BookRepository;
 import hello.bookstore.BookResponse;
 import hello.bookstore.BookService;
-import hello.bookstore.OrderRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
 public class MockBookServiceTest {
     @Mock
-    BookRepository bookRepository;
-    @Mock
-    OrderRepository orderRepository;
-
-    @InjectMocks
     BookService bookService;
+
+    @BeforeEach
+    void setUp() {
+        bookService = mock(BookService.class);
+    }
 
     @Test
     @DisplayName("책을 조회한다.")
