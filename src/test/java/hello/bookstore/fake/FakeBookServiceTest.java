@@ -39,5 +39,5 @@ public class FakeBookServiceTest {
         //then
         Assertions.assertThat(bookService.findBooks().getBookResponses().size()).isEqualTo(3);
     }
-    
+
 }

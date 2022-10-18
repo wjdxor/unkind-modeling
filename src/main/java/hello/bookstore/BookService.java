@@ -1,5 +1,8 @@
 package hello.bookstore;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BookService {
     private final BookRepository bookRepository;
     private final OrderRepository orderRepository;
@@ -12,14 +15,18 @@ public class BookService {
     public BookResponses findBooks() {
         // TODO : 로직을 완성하세요
         // 1. 책들의 리스트를 반환한다.
-
-        return null;
+        List<Book> bookList = bookRepository.findAll();
+        return new BookResponses(
+            bookList.stream()
+                .map(book -> new BookResponse(book.getIsbn(), book.getTitle(), book.getContent(), book.getLocalDateTime()))
+                .collect(Collectors.toList()));
     }
 
     public BookResponse findBook(Long isbn) {
         // TODO : 로직을 완성하세요
         // 1. 책을 찾는다.
-        return null;
+        Book book = bookRepository.findOne(isbn).orElseThrow();
+        return new BookResponse(book.getIsbn(), book.getTitle(), book.getTitle(), book.getLocalDateTime());
     }
 
     public OrderResponse order(OrderRequest orderRequest) {
