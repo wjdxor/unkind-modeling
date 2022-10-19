@@ -1,12 +1,10 @@
 package hello.bookstore.fake;
 
 import hello.bookstore.Book;
-import hello.bookstore.BookResponse;
 import hello.bookstore.BookService;
 import hello.bookstore.Discount;
 import hello.bookstore.OrderRequest;
 import hello.bookstore.OrderResponse;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class FakeBookServiceTest {

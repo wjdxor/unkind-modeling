@@ -37,7 +37,7 @@ public class BookService {
         }
         // 2. 할인이 있는지 확인한다.
         if (!orderRequest.getCouponId().isEmpty()) {
-            Discount coupon = orderRequest.getCouponId().get(0);
+            // 할인 쿠폰에 대한 로직
         }
         // 3. 책과 주문 수량과 할인을 가지고 총 금액을 반환한다.
         Long price = orderRequest.getCount() * 100L - 10L;
